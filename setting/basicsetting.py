@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
+# 配置文件
 
-HOST = '0.0.0.0'
-
-DEBUG = True
+SQLALCHEMY_DATABASE_URI = "mysql://root:Rsrnl,Wysxr0706@127.0.0.1/student"
+SQLALCHEMY_TRACK_MODIFICATIONS = False

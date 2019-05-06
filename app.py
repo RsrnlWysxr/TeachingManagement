@@ -1,20 +1,19 @@
 # -*- encoding: utf-8 -*-
+"""
+封装app变量以及db变量
+"""
 
-from flask import Flask, jsonify
-
-
-app = Flask(__name__)
-
-
-@app.route('/')
-def index():
-    return jsonify({"nickname": "xxy", "age": 18, "sex": "1"})
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 
-@app.route('/login', methods=['GET'])
-def login():
-    return 'login'
+class Application(Flask):
+    def __init__(self, import_name):
+        super().__init__(import_name)
+        self.config.from_pyfile('setting/basicsetting.py')
+
+        db.init_app(self)
 
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+db = SQLAlchemy()
+app = Application(__name__)
