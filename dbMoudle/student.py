@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from app import db
+from . import db
 
 
 class Student(db.Model):  # 继承SQLAlchemy.Model对象，一个对象代表了一张表
@@ -12,7 +12,8 @@ class Student(db.Model):  # 继承SQLAlchemy.Model对象，一个对象代表了
 
     __tablename__ = 'student'  # 该参数可选，不设置会默认的设置表名，如果设置会覆盖默认的表名
 
-    def __init__(self, account, pwd, name, score, avater):  # 初始化方法，可以对对象进行创建
+
+"""     def __init__(self, account, pwd, name, score, avater):  # 初始化方法，可以对对象进行创建
         self.account = account
         self.pwd = pwd
         self.name = name
@@ -22,3 +23,4 @@ class Student(db.Model):  # 继承SQLAlchemy.Model对象，一个对象代表了
     def __repr__(self):  # 输出方法，与__str__类似，但是能够重现它所代表的对象
         return '<Student %r, %r, %r, %r, %r>' % (
             self. account, self.pwd, self.name, self.score, self.avater)
+ """
